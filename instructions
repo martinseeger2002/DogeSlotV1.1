@@ -1,0 +1,48 @@
+# DogSlot V1.1 Setup Instructions
+
+## 1. Dogecoin Core Setup
+
+### 1.1 Install Dogecoin Core
+If you haven't already, download and install Dogecoin Core from the official website: https://dogecoin.com/
+
+### 1.2 Configure dogecoin.conf
+1. Locate your dogecoin.conf file:
+   - Windows: `C:\Users\YourUsername\AppData\Roaming\Dogecoin\`
+
+2. Open dogecoin.conf with a text editor. If it doesn't exist, copy the example dogecoin.conf file from the installation directory.
+
+3. Add the following lines to enable RPC:
+   ````
+   server=1
+   rpcuser=your_username
+   rpcpassword=your_secure_password
+   rpcallowip=127.0.0.1
+   ```
+   Replace `your_username` and `your_secure_password` with your chosen values.
+
+4. Save the file and restart Dogecoin Core.
+
+### 1.3 Update rpc.conf in the game directory
+1. Navigate to the DogSlot game directory.
+2. Open the `rpc.conf` file.
+3. Update the file with the same `rpcuser` and `rpcpassword` you used in dogecoin.conf.
+
+## 2. First-Time Game Setup
+
+### 2.1 Importing the Pool Wallet
+When you run the game for the first time, it will automatically import the pool wallet into Dogecoin Core as a watch-only wallet without rescanning. This means:
+- The pool balance will initially display as 0.
+- You need to manually initiate a rescan to see the correct balance.
+
+### 2.2 Rescanning the Blockchain
+To see the correct pool balance:
+1. Open Dogecoin Core.
+2. Go to Help > Debug Window > Console.
+3. In the console, type the following command and press Enter:
+   ````
+   rescanblockchain
+   ```
+4. Wait for the rescan to complete. This may take some time depending on your computer and the size of the blockchain.
+
+After the rescan is complete, the correct pool balance should be visible in both Dogecoin Core and the DogSlot game.
+
