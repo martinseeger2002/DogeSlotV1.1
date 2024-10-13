@@ -40,7 +40,7 @@ To see the correct pool balance:
 2. Go to Help > Debug Window > Console.
 3. In the console, type the following command and press Enter:
    ````
-   rescanblockchain
+   rescan
    ```
 4. Wait for the rescan to complete. This may take some time depending on your computer and the size of the blockchain.
 
